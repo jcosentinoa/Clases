@@ -19,13 +19,15 @@ class BotonSaludar extends Component {
 
 const styles = StyleSheet.create({
     boton: {
-        backgroundColor: "red",
-        padding: 7
+        backgroundColor: "#ccc",
+        padding: 4,
+        borderRadius: 4,
+        marginBottom: 10
     },
     texto: {
-        color: "white",
-        fontWeight: "bold"
-    } 
+        fontWeight: "bold",
+        textAlign: "center"
+    }
 })
 
 export default BotonSaludar;
