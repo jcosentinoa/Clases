@@ -5,13 +5,13 @@ import { Text } from "react-native-web";
 
 class BotonSaludar extends Component {
     saludar (){
-        console.log("estoy saludando")
+        console.log("Me clickearon")
     }
     render ( ) {
         return(
             
             <Pressable onPress={()=> this.saludar()} style={styles.boton} >
-                <Text style={styles.texto}>Saludar</Text>
+                <Text style={styles.texto}>Clickeame</Text>
             </Pressable>
         )
     }
