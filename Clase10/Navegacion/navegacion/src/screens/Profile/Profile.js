@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
     },
     botonA:{
         backgroundColor: "#FFE880",
-        borderRadius: 5,
-        paddingHorizontal: 25,
-        paddingVertical: 15,
+        borderRadius: 4,
+        paddingHorizontal: 10,
+        paddingVertical: 6,
         margin: 10
     }
 
