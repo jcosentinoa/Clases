@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet } from "react-native";
 import { Text, View } from "react-native-web";
+import DynamicForm from "../../components/DynamicForm/DynamicForm";
 
 
 class Home extends Component {
@@ -10,6 +11,7 @@ class Home extends Component {
             <View style={styles.container}>
                 <Text style={styles.titulo}>HOME</Text>
                 <Text>Bienvenido!</Text>
+                <DynamicForm/>
             </View>
 
         )
