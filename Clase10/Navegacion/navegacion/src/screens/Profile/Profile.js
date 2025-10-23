@@ -14,8 +14,8 @@ class Profile extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.titulo}>Profile</Text>
-                <Pressable onPress={() => this.props.navigation.navigate('Login')}>
-                    <Text style={styles.botonA}>Desloguearse </Text>
+                <Pressable style={styles.botonA} onPress={() => this.props.navigation.navigate('Login')}>
+                    <Text style={styles.texto}>Desloguearse </Text>
                 </Pressable>
             </View>
         )
@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 6,
         margin: 10
+    },
+    texto: {
+        color: "#fff"
     }
 
 });

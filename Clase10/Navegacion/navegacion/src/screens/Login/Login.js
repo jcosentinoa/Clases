@@ -1,24 +1,48 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Pressable} from "react-native";
+import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
 
 
 class Login extends Component {
     constructor(props) {
         super(props);
-           this.state = {
-           
+        this.state = {
+            email: "",
+            password: ""
         }
-      
-      }
+    }
+    onSubmit() {
+        console.log(this.state);
+        this.props.navigation.navigate('Login')
+    }
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.titulo}>Ingresar</Text>
-                <Pressable onPress={() => this.props.navigation.navigate('Register')}>
-                    <Text style={styles.botonB}>Ir a register </Text>
+
+                <TextInput style={styles.input}
+                    keyboardType='email-address'
+                    placeholder='email'
+                    onChangeText={text => this.setState({ email: text })}
+                    value={this.state.email} />
+
+
+                <TextInput style={styles.input}
+                    keyboardType='default'
+                    placeholder='password'
+                    secureTextEntry={true}
+                    onChangeText={text => this.setState({ password: text })}
+                    value={this.state.password} />
+
+                <Pressable style={styles.boton} onPress={() => this.onSubmit()}>
+                    <Text style={styles.texto}> ingresá </Text>
                 </Pressable>
-                <Pressable onPress={() => this.props.navigation.navigate('HomeMenu')}>
-                    <Text style={styles.botonA}>Entrar en la app</Text>
+
+                <Pressable style={styles.botonB} onPress={() => this.props.navigation.navigate('Register')}>
+                    <Text style={styles.texto}>Ir a register </Text>
+                </Pressable>
+
+                <Pressable style={styles.botonA} onPress={() => this.props.navigation.navigate('HomeMenu')}>
+                    <Text style={styles.texto}>Entrar en la app</Text>
                 </Pressable>
 
             </View >
@@ -29,8 +53,8 @@ class Login extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        justifyContent: 'center', 
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20
     },
@@ -39,7 +63,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 10
     },
-    botonB:{
+    botonB: {
         backgroundColor: "rgb(135, 206, 235)",
         borderRadius: 4,
         paddingHorizontal: 10,
@@ -56,12 +80,25 @@ const styles = StyleSheet.create({
         paddingVertical: 6,
         textAlign: "center"
     },
-    botonA:{
+    botonA: {
         backgroundColor: "#FFE880",
         borderRadius: 4,
         paddingHorizontal: 10,
         paddingVertical: 6,
         margin: 10
+    },
+    texto: {
+        color: "#fff"
+    },
+    input: {
+        height: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 15,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderCurve: 6,
+        marginVertical: 10,
+        borderStyle: "solid"
     }
 
 });

@@ -12,8 +12,8 @@ class Register extends Component {
     }
     onSubmit() {
         console.log(this.state);
-         this.props.navigation.navigate('Login')
-      }
+        this.props.navigation.navigate('Login')
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingHorizontal: 10,
-        margenTop: 20        
+        margenTop: 20
     },
     input: {
-        height:20,
+        height: 20,
         paddingHorizontal: 10,
         paddingVertical: 15,
-        borderWidth:1,
-        borderColor: "#ccc", 
-        borderCurve: 6, 
-        marginVertical: 10, 
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderCurve: 6,
+        marginVertical: 10,
         borderStyle: "solid"
-      },
+    },
     titulo: {
         fontSize: 26,
         fontWeight: "bold",
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     texto: {
         color: "#fff"
     },
-    botonA:{
+    botonA: {
         backgroundColor: "#FFE880",
         borderRadius: 4,
         paddingHorizontal: 10,
