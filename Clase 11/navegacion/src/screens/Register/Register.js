@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
-import { auth } from "../../firebase/config";
+import { db, auth } from "../../firebase/config";
 
 class Register extends Component {
     constructor(props) {
@@ -11,18 +11,27 @@ class Register extends Component {
             password: ""
         }
     }
-    onSubmit(email, password) {
+    onSubmit(email, password, user) {
         console.log(this.state);
-        
+
         auth.createUserWithEmailAndPassword(email, password)
             .then(response => {
                 console.log(response);
+                db.collection('users').add({
+                    email: email,
+                    userName: user,
+                    createdAt: Date.now(),
+                })
+                    .then()
+                    .catch(e => console.log(e))
                 this.props.navigation.navigate('Login')
             })
             .catch(error => {
                 console.log(error);
-                
+
             })
+
+
     }
     render() {
         return (
@@ -48,7 +57,7 @@ class Register extends Component {
                     onChangeText={text => this.setState({ password: text })}
                     value={this.state.password} />
 
-                <Pressable style={styles.boton} onPress={() => this.onSubmit(this.state.email, this.state.password)}>
+                <Pressable style={styles.boton} onPress={() => this.onSubmit(this.state.email, this.state.password, this.state.userName)}>
                     <Text style={styles.texto}> Registrate </Text>
                 </Pressable>
 
