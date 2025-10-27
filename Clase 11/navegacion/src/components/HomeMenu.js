@@ -6,6 +6,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import Home from "../screens/Home/Home";
 import Profile from "../screens/Profile/Profile";
 import Usuarios from "../screens/Usuarios/Usuarios";
+import Posts from "../screens/Posts";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,6 +22,9 @@ function HomeMenu(params) {
             
             <Tab.Screen name="Usuarios" component={Usuarios} options={
                 { tabBarIcon: () => <AntDesign name="user" size={24} color="black" /> }} />
+            
+            <Tab.Screen name="Posts" component={Posts} options={
+                { tabBarIcon: () => <AntDesign name="plus" size={24} color="black" /> }} />
 
         </Tab.Navigator>
 
