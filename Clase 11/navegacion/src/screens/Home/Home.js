@@ -28,8 +28,8 @@ class Home extends Component {
                     })
                 })
             })
-        
-        
+
+
     }
 
     render() {
@@ -41,11 +41,15 @@ class Home extends Component {
                 <FlatList
                     data={this.state.posts}
                     keyExtractor={item => item.id.toString()}
-                    renderItem={({ item }) => <Post data={item.data} /> }
+                    renderItem={({ item }) =>
+                        <Post email={item.data.email}
+                            mensaje={item.data.mensaje}
+                            createdAt={item.data.createdAt}
+                        />}
                 />
 
 
-                <DynamicForm/>
+                <DynamicForm />
             </View>
 
         )
@@ -55,8 +59,8 @@ class Home extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        justifyContent: 'center', 
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
         marginTop: 20
     },

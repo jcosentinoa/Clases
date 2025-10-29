@@ -6,11 +6,10 @@ class Post extends Component {
         super(props);
     }
     render() {
-        let data = this.props.data
         return(
             <View style={styles.container} >
-                <Text style={styles.email}>{data.email}</Text>
-                <Text style={styles.mensaje}>{data.mensaje}</Text>
+                <Text style={styles.email}>{this.props.email}</Text>
+                <Text style={styles.mensaje}>{this.props.mensaje}</Text>
 
             </View>
         )
