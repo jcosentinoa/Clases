@@ -42,8 +42,6 @@ class Usuarios extends Component {
                     keyExtractor={item => item.id.toString()}
                     renderItem={({ item }) => <Text>{item.data.email}</Text>}
                 />
-
-
                 <Pressable style={styles.botonA} onPress={() => this.props.navigation.navigate('Login')}>
                     <Text style={styles.texto}>Ir a Login </Text>
                 </Pressable>
